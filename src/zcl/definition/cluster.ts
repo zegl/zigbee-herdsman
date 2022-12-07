@@ -4051,6 +4051,15 @@ const Cluster: {
         manufacturerCode: ManufacturerCode.PHILIPS,
         attributes: {
             state: {ID: 0x0002, type: DataType.octetStr},
+
+            // 0x0030 to 0x0036 are available on gradient capable devices
+            pixelCount: {ID: 0x0030, type: DataType.uint8},
+            pixelLength: {ID: 0x0031, type: DataType.uint16},
+            // 0x0032: unknown (0 or 1)
+            reverseColors: {ID: 0x0033, type: DataType.uint8},
+            // 0x0034: unknown (0, 1, 2, 3)
+            // 0x0035: unknown
+            maxSegments: {ID: 0x0036, type: DataType.uint8},
         },
         commands: {
             multiColor: {
